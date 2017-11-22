@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+<style type="text/css">
+	h1{
+		width: 500px;
+		height: 100px;
+	}
+	#clock{
+		background-color: #9994aa;
+		color : #1171ff;
+	}
+</style>
+	<script type="text/javascript">
+		function cityPrint(){
+			var city = new Array(4);
+			city[0] = "서울";
+			city[1] = "부산";
+			city[2] = "대구";
+			city[3] = "용산";
+
+			var j = city.length;
+
+			for(i=0;i<j;i++){
+				document.write(city[i] + "<br>");
+			}
+		}
+		function cityPrint2(){
+			var city2 = ['서울','부산','대구','용산'];
+			for(var i in city2){
+				document.write(city2[i] + "<br>");
+			}
+		}//cityPrint2 end
+		function cityPrint3(){
+			var city3 = ['서울','부산','대구','용산'];
+			var index = city3.indexOf('용산');
+			index +=1;
+			document.write(index);
+		}
+	</script>
+
+</head>
+
+
+<body>
+	<div>
+		<button keydown="cityPrint();">
+			<h1>ddddddddddddd</h1>
+		</button>
+	</div>
+	<div>
+		<button onclick="cityPrint();">
+			<h1>city</h1>
+		</button>
+	</div>
+	<div>
+		<button onclick="cityPrint2();">
+			<h1>city2</h1>
+		</button>
+	</div>
+	<div>
+		<button onclick="cityPrint3();">
+			<h1>city3</h1>
+		</button>
+	</div>
+	<div>
+		<button onmouseover="cityPrint();" onmouseout="cityPrint3()"></button>
+	</div>
+	<script>
+		window.onload=function(){
+			var clock = document.getElementById('clock');
+			setInterval(function(){
+				var now = new Date();
+				clock.innerHTML = now.toString();
+			},1000);
+		}
+	</script>
+	<h1 id="clock"></h1>
+</body>
+</html>
